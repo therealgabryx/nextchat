@@ -1,19 +1,33 @@
-import styles from '../styles/Home.module.css'
-import ChatPreview from '../components/ChatPreview'
+import styles from '../styles/Index.module.css'
+import { auth, googleAuthProvider, firestore } from '../lib/firebase'
+import { useContext, useState, useEffect, useCallback } from 'react'
+import { UserContext } from '../lib/context'
 
-export default function Home() {
+import router, { useRouter } from 'next/router'
+
+import Loader from '../components/Loader'
+import Enter from '../components/Enter'
+
+export default function index() {
+  const router = useRouter() 
+  const { user } = useContext(UserContext) 
+  
+  useEffect(() => {
+    userUpdateRedirect(user);
+  }, [user]) 
+
   return (
-    <div> 
-      <main>
-        <h1><i><b>nextchat</b></i></h1>
-        
-        <ChatPreview />
-        <ChatPreview />
-        <ChatPreview />
-        <ChatPreview />
-
-      </main> 
-    </div> 
+    user ? <main className={styles.centered}>
+              <Loader color={''} size={''} /> 
+            </main> : <Enter/> 
   ) 
-}
+} 
+
+const userUpdateRedirect = (user) => {
+  setTimeout(() => {
+    user ? router.push('/home') : router.push('/')
+  }, 1000) 
+} 
+
+
 
