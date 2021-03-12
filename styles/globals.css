@@ -1,12 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
+  /* Nextfire Palette */
   --color-bg: #eef0f1;
   --color-text: #08090a;
   --color-blue: #3b49df;
   --color-red: #df3b3b;
   --color-green: #3bdf72;
   --color-gray: #b5bdc4;
+
+  /* DS Palette */
+  --color-ds-light: rgb(56, 60, 60);
+  --color-ds-light-accent: rgb(48,52, 52); 
+  --color-ds-dark: rgb(48, 52, 52); 
+  --color-ds-dark-accent: rgb(48, 44, 44); 
+  --color-ds-darker: rgb(40, 36, 36); 
+  --color-ds-selected: rgb(64, 60, 68); 
+
+  --color-ds-text: rgba(185, 187, 190, 255); 
+  --color-ds-text-selected: rgba(255, 255,255, 255); 
 }
 
 html, body {
@@ -14,12 +26,14 @@ html, body {
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
   background-color: var(--color-bg);
-  color: var(--color-text);
-  margin-top: 50px;
+  color: var(--color-ds-text);
+  background-color: var(--color-ds-dark); 
+  margin-top: 10px;
+  min-height: 100vh;
 }
 
 main {
-  padding: 1rem 10vw;
+  padding: 0rem 10vw;
 }
 
 h1 {
