@@ -25,7 +25,7 @@ export default function index() {
 
 const userUpdateRedirect = (user) => {
   setTimeout(() => {
-    user ? router.push('/home') : router.push('/')
+    user ? router.push('/home') : ''
   }, 1000) 
 } 
 
