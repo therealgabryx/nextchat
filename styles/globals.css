@@ -347,11 +347,63 @@ input[type="file"] {
   }
 }
 
-@keyframes rcs-ellipsis2 {
-  0% {
+@keyframes rcs-ellipsis2 { 
+  0% { 
     transform: translate(0, 0);
-  }
-  100% {
+  } 
+  100% { 
     transform: translate(calc(var(--rcs-ellipsis-size) / 3.33333), 0);
-  }
+  } 
 } 
+
+/* messages */
+
+p {
+  max-width: 500px;
+  line-height: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: relative;
+  color: white;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 4px;
+} 
+
+.message { 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+} 
+
+.sent { 
+  flex-direction: row-reverse;
+} 
+
+.sent p { 
+  color: white;
+  background: #0b93f6;
+  align-self: flex-end;
+} 
+
+.received p { 
+  background: #e5e5ea;
+  color: black;
+} 
+
+.img { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} 
+
+.img img { 
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px;
+}  
+
+
